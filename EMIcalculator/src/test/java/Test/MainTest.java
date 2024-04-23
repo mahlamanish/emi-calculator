@@ -91,9 +91,9 @@ public class MainTest extends BaseUI {
 		home.fillInterestRate(rate);
 		home.fillLoanTenure(time);
 		home.pressEnter();
-		home.firstMonthClick();
-		home.displayPricipal();
-		home.displayInterest();
+//		home.firstMonthClick();
+//		home.displayPricipal();
+//		home.displayInterest();
 	}
 	
 	

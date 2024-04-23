@@ -38,14 +38,29 @@ public class BrowserSetup {
 
 		}
 		else if(Browser.equalsIgnoreCase("Edge")) {
-//			driverPath = System.getProperty("user.dir") + "\\src\\test\\resources\\Drivers\\geckodriver.exe";
-//			System.setProperty("webdriver.gecko.driver", driverPath);
+			driverPath = System.getProperty("user.dir") + "\\src\\test\\resources\\Drivers\\msedgedriver.exe";
+			System.setProperty("webdriver.edge.driver", driverPath);
+//			WebDriverManager.edgedriver().setup();
 			EdgeOptions options = new EdgeOptions();
+//	        options.setCapability("args","--guest");
 	        options.addArguments("--guest");
-	        // Set preferences to disable notifications and pop-ups
-			
-			WebDriverManager.edgedriver().setup();
+	        options.addArguments("--remote-allow-origins=*");
+	        // Disable notifications
+	        options.addArguments("--disable-notifications");
+	        
+	        // Disable pop-up blocking
+	        options.addArguments("--disable-popup-blocking");
+
+	        // Disable Edge's tracking prevention feature
+	        options.addArguments("--disable-tracking-prevention");
+	        
+	        // Disable Edge's SmartScreen filter
+	        options.addArguments("--disable-smartscreen-filter");
+	        
+	        // Disable Edge's SafeSearch feature
+	        options.addArguments("--safebrowsing-disable-download-protection");
 			driver = new EdgeDriver(options);
+			
 
 		}
 		else {

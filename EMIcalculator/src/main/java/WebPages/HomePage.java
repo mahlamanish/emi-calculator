@@ -45,7 +45,13 @@ public class HomePage extends BaseUI{
 	//Method to click on car Loan option in home page
 	public void clickCarLoan() throws Exception 
 	{
+//		carLoanLink.click();
+		carLoanLink = driver.findElement(By.xpath(prop.getProperty("carLoanLinkXpath")));
+		 carLoanAmountTextbox = driver.findElement(By.xpath(prop.getProperty("carLoanAmountXpath")));
+		 interestRateTextbox = driver.findElement(By.xpath(prop.getProperty("interestRateXpath")));
+		 loanTenureTextbox = driver.findElement(By.xpath(prop.getProperty("loanTenureXpath")));
 		carLoanLink.click();
+		
 		logger.log(Status.INFO, "Clicked on CarLoan Link");
 	}
 	
@@ -91,7 +97,12 @@ public class HomePage extends BaseUI{
 	}
 	
 	public void firstMonthClick() {
-		
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		firstMonth = driver.findElement(By.xpath(prop.getProperty("firstMonthXpath")));
 		firstMonth.click();
 		
