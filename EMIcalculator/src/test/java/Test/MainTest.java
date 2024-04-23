@@ -94,6 +94,7 @@ public class MainTest extends BaseUI {
 //		home.firstMonthClick();
 //		home.displayPricipal();
 //		home.displayInterest();
+		System.out.println("***************************FINISHED**************************");
 	}
 	
 	

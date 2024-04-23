@@ -35,7 +35,7 @@ public class BaseUI {
 	
 	public static void quitDriver() 
 	{
-		report.flush();
+//		report.flush();
 		driver.quit();
 		logger.log(Status.INFO, "Driver Closed");
 	}
