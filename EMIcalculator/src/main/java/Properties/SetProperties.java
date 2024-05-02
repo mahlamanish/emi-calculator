@@ -8,7 +8,7 @@ import java.util.Properties;
 public class SetProperties {
 	
 	public static Properties getPropertiesFile() {
-		String path = System.getProperty("user.dir")+"\\src\\test\\resources\\Properties\\data1.properties";
+		String path = System.getProperty("user.dir")+File.separator+"src"+File.separator+"test"+File.separator+"resources"+File.separator+"Properties"+File.separator+"data1.properties";
 		
 		File src = new File(path);
 		

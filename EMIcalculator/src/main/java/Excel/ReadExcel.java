@@ -1,5 +1,6 @@
 package Excel;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
@@ -11,7 +12,7 @@ public class ReadExcel {
 	public static String[][] ReadExcelSheet() throws IOException
 	{
 		String data[][] = new String[1][3];
-		String Path = System.getProperty("user.dir") + "\\src\\test\\resources\\Excel\\LoanData.xlsx";
+		String Path = System.getProperty("user.dir") +File.separator+"src"+File.separator+"test"+File.separator+"resources"+File.separator+"Excel"+File.separator+"LoanData.xlsx";
 		FileInputStream readfile = new FileInputStream(Path);
 	    XSSFWorkbook workbook = new XSSFWorkbook(readfile);
 	    XSSFSheet sheet = workbook.getSheet("Data1");

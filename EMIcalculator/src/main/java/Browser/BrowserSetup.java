@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -28,7 +29,9 @@ public class BrowserSetup {
 //			driverPath = System.getProperty("user.dir") + "\\src\\test\\resources\\Drivers\\chromedriver.exe";
 //			System.setProperty("webdriver.chrome.driver",driverPath );
 			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+			ChromeOptions chromeOptions = new ChromeOptions();
+			chromeOptions.addArguments("--remote-allow-origins=*");
+			driver = new ChromeDriver(chromeOptions);
 
 		}//for firfox browser
 		else if(Browser.equalsIgnoreCase("Firefox")) {
@@ -38,7 +41,7 @@ public class BrowserSetup {
 
 		}
 		else if(Browser.equalsIgnoreCase("Edge")) {
-			driverPath = System.getProperty("user.dir") + "\\src\\test\\resources\\Drivers\\msedgedriver.exe";
+			driverPath = System.getProperty("user.dir") + "/src/test/resources/Drivers/msedgedriver.exe";
 			System.setProperty("webdriver.edge.driver", driverPath);
 //			WebDriverManager.edgedriver().setup();
 			EdgeOptions options = new EdgeOptions();
